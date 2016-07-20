@@ -10,6 +10,10 @@ func (*WrappClock) Now() time.Time {
 	return time.Now()
 }
 
-func SetClock(clock ClockProvider) {
-	clock = clock
+func SetClock(t time.Time) {
+	clock = &testClock{t}
+}
+
+func Now() time.Time  {
+	return clock.Now()
 }
