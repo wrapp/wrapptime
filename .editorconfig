@@ -1,0 +1,17 @@
+# EditorConfig is awesome: http://EditorConfig.org
+# This overrides IDE settings so that we have some standardisation in terms of the way our code is formatted
+
+# top-most EditorConfig file
+root = true
+
+# Makes sure we use decent character encoding/line formatting for everything
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+indent_style = tab
+
+# YAML doesn't like tabs
+[*.{yml, yaml}]
+indent_style = space
+indent_size = 2
