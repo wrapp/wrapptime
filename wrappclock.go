@@ -10,8 +10,15 @@ func (*WrappClock) Now() time.Time {
 	return time.Now()
 }
 
-func SetClock(t time.Time) {
-	clock = &testClock{t}
+func Set(t time.Time, running bool) {
+	clock = &testClock{timeInstance: t, running:running, origTimeSet:time.Now()}
+}
+
+func Travel(d time.Duration) {
+	if &testClock.timeInstance.IsZero() != true {
+		&testClock{offset:d}
+	}
+	return
 }
 
 func Now() time.Time  {
