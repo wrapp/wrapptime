@@ -14,13 +14,6 @@ func Set(t time.Time, running bool) {
 	clock = &testClock{timeInstance: t, running:running, origTimeSet:time.Now()}
 }
 
-func Travel(d time.Duration) {
-	if &testClock.timeInstance.IsZero() != true {
-		&testClock{offset:d}
-	}
-	return
-}
-
 func Now() time.Time  {
 	return clock.Now()
 }

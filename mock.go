@@ -12,9 +12,6 @@ type testClock struct {
 
 	// Whether the clock should run, keeping pace with the real world clock, or stand still
 	running bool
-
-	// Optional offset by which time is set forwards or backwards
-	offset time.Duration
 }
 
 func (tc *testClock) Now() time.Time {
@@ -25,8 +22,8 @@ func (tc *testClock) Now() time.Time {
 		timeDelta := time.Now().Sub(tc.origTimeSet)
 
 		//Add the time elapsed to the mock clock
-		return tc.timeInstance.Add(timeDelta, tc.offset)
+		return tc.timeInstance.Add(timeDelta)
 	}
-	return tc.timeInstance.Add(tc.offset)
+	return tc.timeInstance.Add()
 }
 
