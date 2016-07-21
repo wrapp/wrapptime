@@ -1,5 +1,4 @@
-package wrappclock
-
+package wrapptime
 import "time"
 
 type ClockProvider interface {
