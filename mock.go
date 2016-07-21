@@ -24,6 +24,6 @@ func (tc *testClock) Now() time.Time {
 		//Add the time elapsed to the mock clock
 		return tc.timeInstance.Add(timeDelta)
 	}
-	return tc.timeInstance.Add()
+	return tc.timeInstance
 }
 
